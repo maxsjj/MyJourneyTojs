@@ -3,7 +3,7 @@
 
 class Group {
   //the constructor makes an empty group
-  construcor(){
+  constructor(){
     this.members=[];
   }
   
