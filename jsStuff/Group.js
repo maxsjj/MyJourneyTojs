@@ -28,15 +28,15 @@ class Group {
   
   }
   // make the Group class iterable
-  [Symbol.iterator](){
-    return new groupIterator(this);
+  [Symbol.iterator]() {
+    return new GroupIterator(this);
   }
   
 
 }
 
-class groupIterator {
-  constructor(){
+class GroupIterator {
+  constructor(group){
     this.group=group;
     this.position=0;
   }
@@ -44,8 +44,8 @@ class groupIterator {
     if (this.position>=this.group.members.length){
       return {done: true};
     }else{
-      let result = {value: this.group.members[this.position],done:false
-                   }
+      let result = {value: this.group.members[this.position],
+                    done:false};
       this.position++;
       return result;
     }
