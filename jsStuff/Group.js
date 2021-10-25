@@ -19,7 +19,7 @@ class Group {
   has(value){
     return this.members.includes(value);
   }
-  static form(collection){
+  static from(collection){
     let group = new Group;
     for (let value of collection){
       group.add(value);
@@ -30,7 +30,7 @@ class Group {
 
 }
 
-let group= group.from([10,20]);
+let group= Group.from([10,20]);
 console.log(group.has(10));
 console.log(group.has(30));
 group.delete(10);
